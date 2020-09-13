@@ -1,7 +1,7 @@
-resource "aws_security_group" "allow-ssh" {
-  name        = "Allow-ssh"
+resource "aws_security_group" "main-sg" {
+  name        = "Main SG"
   vpc_id      = aws_vpc.main.id
-  description = "SG to allow ssh and all egress"
+  description = "SG to allow SSH for all"
   ingress {
     from_port   = 22
     protocol    = "tcp"
@@ -15,6 +15,6 @@ resource "aws_security_group" "allow-ssh" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   tags = {
-    Name = "allow-ssh"
+    Name = "Allow SSH"
   }
 }
