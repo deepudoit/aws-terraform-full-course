@@ -1,16 +1,16 @@
-variable "AWS_ACCESS_KEY" {
-
-}
-
-variable "AWS_SECRET_KEY" {
-
-}
-
-variable "AWS_REGION" {
+variable "aws-region" {
   default = "us-east-1"
 }
 
-variable "AMIS" {
+variable "path-to-priv-key" {
+  default = "mykey"
+}
+
+variable "path-to-pub-key" {
+  default = "mykey.pub"
+}
+
+variable "amis" {
   type = map(string)
   default = {
     us-east-1 = "ami-0817d428a6fb68645"
